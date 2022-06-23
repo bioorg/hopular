@@ -164,8 +164,8 @@ def console_entry() -> None:
             print(f'\t{dataset}')
 
     elif args.mode == r'optim':
-        print("hi")
         dataset = find_dataset(name=args.dataset)
+        print(dataset)
         split_index, num_splits = 0, 1
         while split_index < num_splits:
 
