@@ -134,6 +134,9 @@ class DataModule(LightningDataModule):
         """
         super(DataModule, self).__init__()
         self.dataset = dataset
+        print("dataset")
+        print(dataset)
+        print("dataset2")
         self.__batch_size = None if batch_size < 1 else batch_size
         self.__super_sample_factor = super_sample_factor
         self.__noise_probability = noise_probability
