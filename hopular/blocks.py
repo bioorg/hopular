@@ -39,6 +39,8 @@ class EmbeddingBlock(LightningModule):
         """
         super(EmbeddingBlock, self).__init__()
         self.__input_sizes = input_sizes
+        print("input_sizes")
+        print(input_sizes)
         self.__feature_size = feature_size
         self.__feature_discrete = feature_discrete
         print("feature_discrete")
@@ -46,6 +48,8 @@ class EmbeddingBlock(LightningModule):
         self.__dropout_probability = dropout_probability
         self.__feature_boundaries = torch.cumsum(torch.as_tensor([0] + self.__input_sizes), dim=0)
         self.__feature_boundaries = (self.__feature_boundaries[:-1], self.__feature_boundaries[1:])
+        print("self.__feature_boundaries")
+        print(self.__feature_boundaries)
 
         # Feature-specific embeddings.
         self.feature_embeddings = torch.nn.ModuleList([torch.nn.Sequential(
@@ -120,7 +124,7 @@ class EmbeddingBlock(LightningModule):
         feature_iterator = zip(self.feature_embeddings, *self.__feature_boundaries);print("Hi")
         input_embedded = torch.cat(tuple(feature_embedding(
             input[:, feature_begin:feature_end]
-        ) for feature_embedding, feature_begin, feature_end in feature_iterator), dim=1);print(input_embedded)
+        ) for feature_embedding, feature_begin, feature_end in feature_iterator), dim=1);print(input_embedded.shape)
 
         # Add feature type and feature position embeddings.
         if self.feature_type_embeddings is not None:
