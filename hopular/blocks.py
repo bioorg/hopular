@@ -41,6 +41,8 @@ class EmbeddingBlock(LightningModule):
         self.__input_sizes = input_sizes
         self.__feature_size = feature_size
         self.__feature_discrete = feature_discrete
+        print("feature_discrete")
+        print(feature_discrete)
         self.__dropout_probability = dropout_probability
         self.__feature_boundaries = torch.cumsum(torch.as_tensor([0] + self.__input_sizes), dim=0)
         self.__feature_boundaries = (self.__feature_boundaries[:-1], self.__feature_boundaries[1:])
