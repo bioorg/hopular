@@ -42,6 +42,8 @@ class EmbeddingBlock(LightningModule):
         print("input_sizes")
         print(input_sizes)
         self.__feature_size = feature_size
+        print("feature_size")
+        print(feature_size)
         self.__feature_discrete = feature_discrete
         print("feature_discrete")
         print(feature_discrete)
