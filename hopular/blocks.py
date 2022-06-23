@@ -410,9 +410,11 @@ class HopularBlock(LightningModule):
         print("DSfdsfdsfdd============================")
         print("sample_memory")
         print(sample_memory)
+        print(sample_memory.shape)
         print(sample_memory_mask)
         print("feature_memory")
         print(feature_memory)
+        print(feature_memory.shape)
         print(feature_memory_mask)
         
         # Compute sample-sample interactions and reshape result accordingly.
