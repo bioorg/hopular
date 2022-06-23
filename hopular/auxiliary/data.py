@@ -135,7 +135,7 @@ class DataModule(LightningDataModule):
         super(DataModule, self).__init__()
         self.dataset = dataset
         print("dataset")
-        print(dataset)
+        print(dataset[0])
         print("dataset2")
         self.__batch_size = None if batch_size < 1 else batch_size
         self.__super_sample_factor = super_sample_factor
@@ -736,7 +736,11 @@ class FixedDataset(CSVDataset):
 
     def _load_data(self) -> np.ndarray:
         features = pd.read_csv(self.resources_path / f'{self.dataset_name}_py.dat', header=None)
+        print("features")
+        print(features)
         labels = pd.read_csv(self.resources_path / r'labels_py.dat', header=None)
+        print("features2")
+        print(labels)
         return np.concatenate((features, labels), axis=1)
 
 
@@ -792,6 +796,8 @@ class CVDataset(CSVDataset):
         )
 
     def _load_data(self) -> np.ndarray:
+        print("self.dataset_name")
+        print(self.dataset_name)
         return pd.read_csv(
             self.resources_path / f'{self.dataset_name}.csv',
             header=None,
