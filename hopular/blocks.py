@@ -115,7 +115,7 @@ class EmbeddingBlock(LightningModule):
         """
 
         # Embed each feature separately.
-        feature_iterator = zip(self.feature_embeddings, *self.__feature_boundaries)
+        feature_iterator = zip(self.feature_embeddings, *self.__feature_boundaries);print("Hi")
         input_embedded = torch.cat(tuple(feature_embedding(
             input[:, feature_begin:feature_end]
         ) for feature_embedding, feature_begin, feature_end in feature_iterator), dim=1);print(input_embedded)
