@@ -177,7 +177,7 @@ def console_entry() -> None:
                 mask_probability=args.mask_probability,
                 replace_probability=args.replace_probability,
                 num_workers=args.num_workers
-            )
+            );print("fuck");print(data_module)
             hopular_model = Hopular.from_data_module(
 
                 # Hopular specific arguments.
