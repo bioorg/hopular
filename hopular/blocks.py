@@ -407,6 +407,14 @@ class HopularBlock(LightningModule):
         :return: refined current prediction
         """
 
+        print("DSfdsfdsfdd============================")
+        print("sample_memory")
+        print(sample_memory)
+        print(sample_memory_mask)
+        print("feature_memory")
+        print(feature_memory)
+        print(feature_memory_mask)
+        
         # Compute sample-sample interactions and reshape result accordingly.
         interactions = self.sample_sample_associations(
             self.sample_norm(input),
