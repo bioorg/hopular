@@ -118,7 +118,7 @@ class EmbeddingBlock(LightningModule):
         feature_iterator = zip(self.feature_embeddings, *self.__feature_boundaries)
         input_embedded = torch.cat(tuple(feature_embedding(
             input[:, feature_begin:feature_end]
-        ) for feature_embedding, feature_begin, feature_end in feature_iterator), dim=1)
+        ) for feature_embedding, feature_begin, feature_end in feature_iterator), dim=1);print(input_embedded)
 
         # Add feature type and feature position embeddings.
         if self.feature_type_embeddings is not None:
