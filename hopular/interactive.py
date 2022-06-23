@@ -16,7 +16,7 @@ def console_entry() -> None:
 
     :return: None
     """
-    
+    print("sdfasdfsaddfad")
     arg_parser = argparse.ArgumentParser(
         description=r'A novel deep learning architecture based on continuous modern Hopfield networks' +
                     r' for tackling small tabular datasets.')
